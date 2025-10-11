@@ -429,3 +429,34 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
+@media (max-width: 768px) {
+  #qr img {
+    width: 90% !important;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    gap: 0.4rem !important; /* znížené z 1.5rem */
+  }
+
+  .product {
+    transform: scale(0.85);
+    transform-origin: top center;
+    margin: 0; /* odstráni prípadné extra medzery */
+  }
+}
+
+@media (max-width: 768px) {
+  .hours {
+    font-size: 0.67em;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    gap: 0.75rem; 
+  }
+}
