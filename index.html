@@ -7,19 +7,30 @@
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
+
+  <nav class="navbar">
+    <div class="nav-logo-group">
+      <img src="pic/logo.png" alt="E-Kasa Jančík" class="nav-logo">
+      <span class="nav-title">E-Kasa Jančík</span>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#produkty">Produkty</a></li>
+      <li><a href="#qr">QR platby</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  
   <header class="site-header">
-  <img class="brand-mark" src="pic/logo.png" alt="E-Kasa Jančík">
-  <br>
-  <div class="header-text">
-    <h1>E-Kasa Jančík</h1>
-    <br>
-    <p>E-kasa pokladnice značky Elcom a FiskalPRO, predaj, doplnky a servis</p>
-    <br>
-  </div>
+    <div class="header-text">
+      <h1>E-Kasa Jančík</h1>
+      <p>E-kasa pokladnice značky Elcom a FiskalPRO, predaj, doplnky a servis</p>
+    </div>
   </header>
 
-    <main>
-        <section class="products">
+  <main>
+        <section class="products" id="produkty">
             <h2>Naša ponuka</h2>
             <div class="product-list">
                 <div class="product">
@@ -49,43 +60,22 @@
                 </div>
             </div>
         </section>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <section>
+
+        <section id="qr">
           <div class = "fs">
           <h2>Platba QR kódmi cez pokladne </h2>
-          <br>
-           <a href = "https://www.info-qrplatby.sk" target="_blank"> 
-            <img src = "pic/qr.png" width = 70%>
+          <a href = "https://www.info-qrplatby.sk" target="_blank"> 
+            <img src = "pic/qr.png" width="70%">
            </a>
            <p>zdroj: FS</p>
            </div>
-          </section>
         </section> 
-        <section class="hours">
-          <h2>Bližšie infomácie osobne po telefonickom dohovore v časoch: </h2>
-          <table class="hours-table">
-            <tbody>
-              <tr><td>Pondelok</td><td>08:00 – 16:00</td></tr>
-              <tr><td>Utorok</td><td>08:00 – 16:00</td></tr>
-              <tr><td>Streda</td><td>08:00 – 16:00</td></tr>
-              <tr><td>Štvrtok</td><td>08:00 – 16:00</td></tr>
-              <tr><td>Piatok</td><td>08:00 – 16:00</td></tr>
-              <tr><td>Sobota</td><td>--</td></tr>
-              <tr><td>Nedeľa</td><td>--</td></tr>
-            </tbody>
-          </table>
 
-        <h2 style="color: #bb0000;">! HOTLINE SERVIS 8:00 - 20:00 ! <br> 0905 389 814</h2>
         
-        </section>
-        
+
         <section class="carousel">
-        <h2>Najpredávanejšie produkty</h2>
-        <h4>(Pokladnice máme skladom, alebo k odberu do 24 hodín)</h4>
+          <h2>Najpredávanejšie produkty</h2>
+          <h4>(Pokladnice máme skladom, alebo k odberu do 24 hodín)</h4>
 
           <div class="carousel-wrapper">
             <button class="carousel-btn prev">&#10094;</button>
@@ -125,35 +115,11 @@
             <button class="carousel-btn next">&#10095;</button>
           </div>
       </section>
+    <section class="hours" id="kontakt">
 
-
-      <section class="external-links">
-      <h2>Kompletná ponuka pokladníc značky<br>ELCOM a FiskalPRO</h2>
-      <p>Pokladne máme skladom, alebo k odberu do 24 hodín</p>
-
-      <div class="link-cards">
-        <a class="link-card" href="https://fiskalpro.sk/ekasa-produkty/" target="_blank">
-          <div class="icon">🌐</div>
-          <div class="text">
-            <strong>Ponuka FiscalPRO</strong>
-            <span>eshop.fiskalpro.sk</span>
-          </div>
-          <div class="link-icon">🔗</div>
-        </a>
-
-        <a class="link-card" href="https://www.elcom.eu/shop/category/pokladnicne-a-platobne-systemy-registracne-pokladnice-1" target="_blank">
-          <div class="icon">🌐</div>
-          <div class="text">
-            <strong>Ponuka ELCOM</strong>
-            <span>elcom.eu</span>
-          </div>
-          <div class="link-icon">🔗</div>
-        </a>
-      </div>
-    </section>
-
-      
-
+        <h2 style="color: #bb0000;">Bližšie informácie a  HOTLINE SERVIS 8:00 - 20:00  <br> 0905 389 814</h2>
+        
+        </section>
     </main>
 
     <footer>
@@ -161,7 +127,7 @@
         <p>Adresa: Jána Milca 42, 010 01 Žilina, Slovakia</p>
         <p>© E-Kasa Jančík</p>
     </footer>
-    <script src="js.js"></script>
 
+    <script src="js.js"></script>
 </body>
 </html>

@@ -1,71 +1,48 @@
+// --- Hamburger menu ---
+const toggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
 
-  const track = document.getElementById('carouselTrack');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
 
-  const scrollAmount = () => track.clientWidth;
-
-  nextBtn.onclick = () => {
-    track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-  };
-
-  prevBtn.onclick = () => {
-    track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
-  };
-
-  // Drag support
-  let isDown = false;
-  let startX, scrollLeft;
-
-  track.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - track.offsetLeft;
-    scrollLeft = track.scrollLeft;
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active'); // automaticky zatvorí menu po kliknutí
   });
+});
 
-  track.addEventListener('mouseleave', () => isDown = false);
-  track.addEventListener('mouseup', () => isDown = false);
-  track.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    track.scrollLeft = scrollLeft - walk;
-  });
+// --- Carousel ---
+const track = document.getElementById('carouselTrack');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
 
-      const days = ["Nedeľa", "Pondelok", "Utorok", "Streda", "Štvrtok", "Piatok", "Sobota"];
-  const todayIndex = new Date().getDay();
-  const now = new Date();
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  const currentTime = hours * 60 + minutes;
+const scrollAmount = () => track.clientWidth;
 
-  const rows = document.querySelectorAll('.hours-table tr');
-  const statusEl = document.getElementById('status');
+nextBtn.onclick = () => {
+  track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+};
 
-  let isOpen = false;
-  let nextOpenDay = null;
-  let nextOpenTime = null;
+prevBtn.onclick = () => {
+  track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+};
 
-  rows.forEach((row, index) => {
-    const dayName = row.cells[0].textContent.trim();
-    const hoursText = row.cells[1].textContent.trim();
+// Drag support
+let isDown = false;
+let startX, scrollLeft;
 
-    if (dayName === days[todayIndex]) {
-      row.classList.add('today');
+track.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - track.offsetLeft;
+  scrollLeft = track.scrollLeft;
+});
 
-      if (hoursText.toLowerCase() !== 'zatvorené') {
-        const [open, close] = hoursText.split('–').map(t => {
-          const [h, m] = t.trim().split(':').map(Number);
-          return h * 60 + m;
-        });
-
-        if (currentTime >= open && currentTime < close) {
-          isOpen = true;
-        } else {
-          nextOpenDay = todayIndex;
-          nextOpenTime = open;
-        }
-      }
-    }
-  });
+track.addEventListener('mouseleave', () => isDown = false);
+track.addEventListener('mouseup', () => isDown = false);
+track.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - track.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  track.scrollLeft = scrollLeft - walk;
+});
