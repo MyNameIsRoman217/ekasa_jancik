@@ -599,3 +599,43 @@ footer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
 }
+
+.site-header {
+  background: #0a3c6b;
+  padding: 20px 40px;
+  color: white;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* vycentruje celú dvojicu */
+  gap: 24px;                 /* medzera medzi logom a textom */
+}
+
+.header-logo {
+  width: 120px;              /* zväčši logo – uprav podľa chuti */
+  height: auto;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.header-text p {
+  margin-top: 6px;
+  font-size: 1.1rem;
+}
+
+/* Mobilné zobrazenie: logo sa dá nad text */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header-logo {
+    width: 100px;
+  }
+}
