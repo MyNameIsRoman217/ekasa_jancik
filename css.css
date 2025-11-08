@@ -549,3 +549,42 @@ footer {
     font-size: 1.2rem;
   }
 }
+
+.brand-buttons {
+  text-align: center;
+  margin: 50px 0 40px 0;
+}
+
+.brand-btn {
+  display: inline-block;
+  padding: 16px 34px;      /* ešte väčšie */
+  margin: 12px 30px;       /* väčší rozostup na desktope */
+  background-color: #170186;
+  color: white;
+  font-weight: 600;
+  font-size: 1.15rem;      /* väčší text */
+  text-decoration: none;
+  border-radius: 10px;     /* krajšie zaoblenie */
+  transition: 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.brand-btn:hover {
+  background-color: #330ddc;
+}
+
+/* ✅ Mobil – tlačidlá pod sebou a krajšie vycentrované */
+@media (max-width: 600px) {
+  .brand-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand-btn {
+    width: 75%;             /* širšie na mobile */
+    margin: 0;              /* odstránime desktopové rozostupy */
+    padding: 16px 0;        /* rovnomerné */
+  }
+}
