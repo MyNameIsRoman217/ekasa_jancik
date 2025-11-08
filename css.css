@@ -573,7 +573,7 @@ footer {
   background-color: #330ddc;
 }
 
-/* ✅ Mobil – tlačidlá pod sebou a krajšie vycentrované */
+
 @media (max-width: 600px) {
   .brand-buttons {
     display: flex;
@@ -583,8 +583,19 @@ footer {
   }
 
   .brand-btn {
-    width: 75%;             /* širšie na mobile */
-    margin: 0;              /* odstránime desktopové rozostupy */
-    padding: 16px 0;        /* rovnomerné */
+    width: 75%;             
+    margin: 0;              
+    padding: 16px 0;       
   }
+}
+#qr{
+ background: #e5ecff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  width: 90%;              
+  max-width: 1400px;        
+  margin: 2.5rem auto;      
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
 }
